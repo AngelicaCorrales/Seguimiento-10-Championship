@@ -40,13 +40,13 @@ public class Main{
 			showAveragePilots();
 			break;
 		case 3:
-			System.out.println("Hasta la proxima!");
+			System.out.println("\nHasta la proxima!");
 			break;
 	
 	
 		
 		default:
-			System.out.println("Error, opcion no valida");
+			System.out.println("\n Error, opcion no valida \n");
 		
 		}
 	}
@@ -71,7 +71,7 @@ public class Main{
 		System.out.println("REGISTRAR PILOTO \n");
 		
 		System.out.println("Ingrese el nombre del piloto");
-		String name=sc.nextLine();
+		String name=sc.nextLine().toUpperCase();
 
 		System.out.println("\nIngrese la edad del piloto");
 		int age=sc.nextInt();
@@ -104,7 +104,9 @@ public class Main{
 
 		System.out.println("-----------------------------------------------------------");
 		if(championship.findPilot(name)){
-			System.out.println("\nNo es posible registrar el piloto, ya ha sido registrado anteriormente");
+			System.out.println("\nNo es posible registrar el piloto, ya ha sido registrado anteriormente \n");
+			System.out.println("-----------------------------------------------------------");
+
 		}
 		championship.addPilot(name, age, team, scoreRaces);
 	}
