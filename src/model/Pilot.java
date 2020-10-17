@@ -1,17 +1,24 @@
 package model;
-public enum Team{
-	SCUDERIA_FERRARI, MCLAREN_F1_TEAM, RED_BULL_RACING, MERCEDES_AMG, RACING_POINT, ALFA_ROMEO, RENAULT, WILLIAMS;
+/*public enum Team{
+	SCUDERIA_FERRARI("SCUDERIA FERRARI"),
+	MCLAREN_F1_TEAM("MCLAREN F1 TEAM"),
+	RED_BULL_RACING("RED BULL RACING"), 
+	MERCEDES_AMG("MERCEDES AMG"),
+	RACING_POINT("RACING POINT"),
+	ALFA_ROMEO("ALFA ROMEO"),
+	RENAULT("RENAULT"),
+	WILLIAMS("WILLIAMS");
 }
-
+*/
 public class Pilot{
 	//attributes
 	private String name;
 	private int age;
-	private Team team;
+	private String team;
 	private int[] scores;
 
 	//methods
-	public Pilot(String pName, int pAge, Team pTeam, int[] pScores){
+	public Pilot(String pName, int pAge, String pTeam, int[] pScores){
 		name=pName;
 		age=pAge;
 		team=pTeam;
@@ -34,11 +41,11 @@ public class Pilot{
 		age=pAge;
 	}
 
-	public Team getTeam(){
+	public String getTeam(){
 		return team;
 	}
 
-	public void setTeam(Team pTeam){
+	public void setTeam(String pTeam){
 		team=pTeam;
 	}
 
@@ -55,9 +62,9 @@ public class Pilot{
 		double average;
 		int quantityRaces=scores.length;
 		for(int i=0; i<scores.length;i++){
-			if(scores[i]!=null){
+			
 				sumScores+=scores[i];
-			}
+			
 		}
 		average=sumScores/quantityRaces;
 

@@ -48,7 +48,7 @@ public class Championship{
 	}
 	*/
 
-	public void addPilot(String pName, int pAge, Team pTeam, int[] pScores){
+	public void addPilot(String pName, int pAge, String pTeam, int[] pScores){
 		boolean exist=findPilot(pName);
 		boolean control=false;
 
@@ -80,8 +80,8 @@ public class Championship{
 	public String showAverageTimes(){
 		String message="";
 		double remainder;
-		int[]hours= new int[pilots.length];
-		int[]min= new int[pilots.length];
+		double[]hours= new double[pilots.length];
+		double[]min= new double[pilots.length];
 		double[]seg= new double[pilots.length];
 		boolean control=false;
 
@@ -93,11 +93,11 @@ public class Championship{
 				hours[i]=(pilots[i].calculateAverage()-remainder)/3600;
 				min[i]=(remainder-hours[i])/60;
 				seg[i]=remainder%60;
-				message+="-El piloto "+pilots[i].getName()+" tiene un promedio del tiempo de las carreras de "+hours[i]+" horas, "+min[i]+" minutos, y "+seg[i]+" segundos \n";
+				message+="-El piloto "+pilots[i].getName()+" tiene un promedio del tiempo de las carreras de "+(int)hours[i]+" horas, "+(int)min[i]+" minutos, y "+seg[i]+" segundos \n";
 			}
 		}
 		if (!control){
-			message"No se han registrado pilotos";
+			message="No se han registrado pilotos";
 		}
 		
 		return message;
