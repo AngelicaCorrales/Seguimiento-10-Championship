@@ -78,20 +78,29 @@ public class Championship{
 	}
 
 	public String showAverageTimes(){
-		String message;
+		String message="";
 		double remainder;
+		int[]hours= new int[pilots.length];
+		int[]min= new int[pilots.length];
+		double[]seg= new double[pilots.length];
+		boolean control=false;
 
 
 		for(int i=0; i<pilots.length; i++){
 			if(pilots[i]!=null){
-				remainder=average[i]%3600;
-				hours[i]=(average[i]-remainder)/3600;
+				control=true;
+				remainder=pilots[i].calculateAverage()%3600;
+				hours[i]=(pilots[i].calculateAverage()-remainder)/3600;
 				min[i]=(remainder-hours[i])/60;
 				seg[i]=remainder%60;
+				message+="-El piloto "+pilots[i].getName()+" tiene un promedio del tiempo de las carreras de "+hours[i]+" horas, "+min[i]+" minutos, y "+seg[i]+" segundos \n";
 			}
 		}
-		message="";
-
+		if (!control){
+			message"No se han registrado pilotos";
+		}
+		
+		return message;
 	}
 
 }
