@@ -39,18 +39,11 @@ public class Championship{
 		pilots=pPilots;
 	}
 
-	/*
-	public String registerPilot(String pName, int pAge, Team pTeam, int pAmountRaces){
-		String message="El piloto ha sido registrado";
-		addPilot(pName, pAge, pTeam, pAmountRaces);
-		
-		return message;
-	}
-	*/
 
 	public void addPilot(String pName, int pAge, String pTeam, int[] pScores){
 		boolean exist=findPilot(pName);
 		boolean control=false;
+		
 
 		if (!exist){
 			for(int i=0; i<pilots.length && !control; i++){

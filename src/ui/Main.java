@@ -76,23 +76,29 @@ public class Main{
 		System.out.println("\nIngrese la edad del piloto");
 		int age=sc.nextInt();
 		sc.nextLine();
+		boolean control=false;
+		String team;
+		do{
+			System.out.println("\nIngrese el equipo al que pertenece el piloto");
+			team=sc.nextLine().toUpperCase();
+			if(team.equals("SCUDERIA FERRARI") 
+				||team.equals("MCLAREN F1 TEAM") 
+				||team.equals("RED BULL RACING") 
+				|| team.equals("MERCEDES AMG") 
+				|| team.equals("RACING POINT") 
+				|| team.equals("ALFA ROMEO") 
+				|| team.equals("RENAULT")
+				 || team.equals("WILLIAMS")){
+				
+				control=false;
+			}
+			else{
+				control=true;
+				System.out.println("Equipo no valido, ingrese nuevamente");
+			}
 
-		System.out.println("\nIngrese el equipo al que pertenece el piloto");
-		String team=sc.nextLine();
-		/* Team teamx= Team.valueOf(team.toUpperCase());
-
+		}while(control);
 		
-		switch(teamx){
-			case SCUDERIA_FERRARI:
-			case MCLAREN_F1_TEAM:
-			case RED_BULL_RACING:
-			case MERCEDES_AMG:
-			case RACING_POINT:
-			case ALFA_ROMEO:
-			case RENAULT:
-			case WILLIAMS:
-		}
-		*/
 
 		int[] scoreRaces= new int [championship.getRaces()];
 		for(int i=0; i<scoreRaces.length; i++){
