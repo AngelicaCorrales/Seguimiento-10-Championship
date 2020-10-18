@@ -79,9 +79,9 @@ public class Main{
 		boolean control=false;
 		String team;
 		do{
-			System.out.println("\nIngrese el equipo al que pertenece el piloto"+ 
-				" (SCUDERIA FERRARI, MCLAREN F1 TEAM, RED BULL RACING, MERCEDES AMG,"+
-				" RACING POINT, ALFA ROMEO, RENAULT, WILLIAMS");
+			System.out.println("\nIngrese el equipo al que pertenece el piloto \n"+ 
+				" **SCUDERIA FERRARI \n **MCLAREN F1 TEAM \n **RED BULL RACING \n **MERCEDES AMG \n"+
+				" **RACING POINT \n **ALFA ROMEO \n **RENAULT \n **WILLIAMS");
 			team=sc.nextLine().toUpperCase();
 			if(team.equals("SCUDERIA FERRARI") 
 				||team.equals("MCLAREN F1 TEAM") 
@@ -117,7 +117,7 @@ public class Main{
 
 		}
 		if(championship.getPilots()[14]!=null){
-			System.out.println("\nNo es posible registrar el piloto, ya ha se ha registrado la cantidad maxima (15) \n");
+			System.out.println("\nNo es posible registrar el piloto, ya se ha registrado la cantidad maxima (15) \n");
 			System.out.println("-----------------------------------------------------------");
 		}
 		championship.addPilot(name, age, team, scoreRaces);
