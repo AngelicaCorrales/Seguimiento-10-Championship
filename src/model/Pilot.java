@@ -1,28 +1,61 @@
 package model;
-/*public enum Team{
-	SCUDERIA_FERRARI("SCUDERIA FERRARI"),
-	MCLAREN_F1_TEAM("MCLAREN F1 TEAM"),
-	RED_BULL_RACING("RED BULL RACING"), 
-	MERCEDES_AMG("MERCEDES AMG"),
-	RACING_POINT("RACING POINT"),
-	ALFA_ROMEO("ALFA ROMEO"),
-	RENAULT("RENAULT"),
-	WILLIAMS("WILLIAMS");
+enum Team{
+	SCUDERIA_FERRARI,
+	MCLAREN_F1_TEAM,
+	RED_BULL_RACING, 
+	MERCEDES_AMG,
+	RACING_POINT,
+	ALFA_ROMEO,
+	RENAULT,
+	WILLIAMS;
 }
-*/
+
 public class Pilot{
 	//attributes
 	private String name;
 	private int age;
-	private String team;
+	private Team team;
 	private int[] scores;
 
 	//methods
 	public Pilot(String pName, int pAge, String pTeam, int[] pScores){
 		name=pName;
 		age=pAge;
-		team=pTeam;
 		scores= pScores;
+
+		if(pTeam.equals("SCUDERIA FERRARI")){
+			team=Team.SCUDERIA_FERRARI;
+		}
+
+		if(pTeam.equals("MCLAREN F1 TEAM")){
+			team=Team.MCLAREN_F1_TEAM;
+		}
+
+		if(pTeam.equals("RED BULL RACING")){
+			team=Team.RED_BULL_RACING;
+		}
+
+		if(pTeam.equals("MERCEDES AMG")){
+			team=Team.MERCEDES_AMG;
+		}
+
+		if(pTeam.equals("RACING POINT")){
+			team=Team.RACING_POINT;
+		}
+
+		if(pTeam.equals("ALFA ROMEO")){
+			team=Team.ALFA_ROMEO;
+		}
+
+		if(pTeam.equals("RENAULT")){
+			team=Team.RENAULT;
+		}
+
+		if(pTeam.equals("WILLIAMS")){
+			team=Team.WILLIAMS;
+		}
+
+
 	}
 
 	public String getName(){
@@ -41,11 +74,11 @@ public class Pilot{
 		age=pAge;
 	}
 
-	public String getTeam(){
+	public Team getTeam(){
 		return team;
 	}
 
-	public void setTeam(String pTeam){
+	public void setTeam(Team pTeam){
 		team=pTeam;
 	}
 

@@ -86,7 +86,7 @@ public class Championship{
 				hours[i]=(pilots[i].calculateAverage()-remainder)/3600;
 				min[i]=(remainder-hours[i])/60;
 				seg[i]=remainder%60;
-				message+="-El piloto "+pilots[i].getName()+" tiene un promedio del tiempo de las carreras de "+(int)hours[i]+" horas, "+(int)min[i]+" minutos, y "+seg[i]+" segundos \n";
+				message+="-El piloto "+pilots[i].getName()+" tiene un promedio del tiempo de las carreras de "+(int)hours[i]+" horas, "+(int)min[i]+" minutos, y "+seg[i]+" segundos \n \n";
 			}
 		}
 		if (!control){
